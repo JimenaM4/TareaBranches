@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galería de imagenes</title>
     <link rel="icon" href="https://kinsta.com/es/wp-content/uploads/sites/8/2018/07/plugins-galeria-fotos-wordpress.jpg" type="image/jpg">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style.css"><!--linkea el archivo php con uno css para darle diseño-->
 </head>
 <body>
     <form id=formulario action="./archivos_forms_galeria.php" method="post" enctype="multipart/form-data" target="_self" > <!--necesario poner multipart/form-data para que te permita poner archivos binarios-->
@@ -33,7 +33,7 @@
             $ext = pathinfo($name, PATHINFO_EXTENSION); //saca la extencion del nombre : .jpg
             if (!file_exists("./img"))//si la carpeta no existe, la crea
             {
-                if (mkdir("./img"));
+                if (mkdir("./img"));//mkdir crea ina carpeta
             }
             $ruta_final = "./img/$nombre.$ext";//ruta en la que se va a guardar
             rename($ruta_temporal, $ruta_final);//cambia la ruta temporal por la ruta final
