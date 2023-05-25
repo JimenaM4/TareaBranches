@@ -44,7 +44,7 @@
         $archivos=[];
         while($hay_arch)
         {
-            $archivo = readdir($dir);
+            $archivo = readdir($dir);//es para leer el directorio
             if ($archivo)
             {
                 array_push($archivos, $archivo);
@@ -64,7 +64,7 @@
                 <tbody>';
                 foreach($archivos as $img)
                 {
-                    $nombreArch = pathinfo($img, PATHINFO_BASENAME);
+                    $nombreArch = pathinfo($img, PATHINFO_BASENAME);//recive la ruta de la imagen
                     if($img !="." && $img != "..")
                     {
                         echo "  <tr>
